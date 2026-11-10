@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">随手纯本地记账</string>
+    <string name="accessibility_desc">用于在微信或支付宝完成付款/收款页面自动识别金额与商户，弹出本地记账窗口记录资金用途。本应用无任何联网权限，数据100%保存在本地。</string>
+</resources>
