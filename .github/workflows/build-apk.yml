@@ -26,13 +26,7 @@ jobs:
         run: |
           PROJECT_DIR=$(dirname "$(find . -name 'settings.gradle.kts' | head -n 1)")
           cd "$PROJECT_DIR"
-          python3 -c '
-          p = "app/src/main/java/com/personal/autoledger/BillParser.kt"
-          t = open(p).read().replace("\\\\s", "\\s").replace("\\\\.", "\\.").replace("\\s", "\\\\s").replace("\\.", "\\\\.")
-          open(p, "w").write(t)
-          m = "app/src/main/AndroidManifest.xml"
-          open(m, "w").write(open(m).read().replace("package=\"com.personal.autoledger\"", ""))
-          '
+          python3 -c 'p="app/src/main/java/com/personal/autoledger/BillParser.kt"; t=open(p).read().replace("\\\\s","\\s").replace("\\\\.","\\.").replace("\\s","\\\\s").replace("\\.","\\\\."); open(p,"w").write(t)'
           gradle assembleDebug --no-daemon
 
       - name: Upload APK Artifact
